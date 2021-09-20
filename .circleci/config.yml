@@ -25,9 +25,8 @@ jobs:
       - run: |
           docker build -t nodejs_sample_app:SNAPSHOT .
           docker run -d -p 8080:8080 nodejs_sample_app:SNAPSHOT
-      - run: docker ps -a
       - run: |
-          curl -v http://localhost:8080/
+          curl -v http://localhost:8080/users
     
   publish:
     machine:
