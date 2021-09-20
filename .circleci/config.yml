@@ -10,8 +10,9 @@ jobs:
           npm install
           npm build
   publish:
-    docker:
-      - image: docker
+    machine:
+      image: ubuntu-2004:202107-02
+      docker_layer_caching: true
     steps:
       - checkout
       - run: |
