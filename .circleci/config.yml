@@ -7,4 +7,4 @@ workflows:
         - docker/publish:
             docker-username: DOCKER_LOGIN 
             docker-password: DOCKER_PASSWORD 
-            image: nodejs-sample-app 
+            image: alexbsd/nodejs-sample-app 
