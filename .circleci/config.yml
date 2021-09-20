@@ -7,7 +7,7 @@ jobs:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
-      - run: docker login -u $DOCKER_USERNAME -p $DOCKERPASSWORD      
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD      
       - docker/build:
           attach-at: /app 
           image: nodejs-sample-image 
