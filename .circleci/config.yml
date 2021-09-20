@@ -1,17 +1,10 @@
 version: 2.1
 orbs:
   docker: circleci/docker@1.7.0
-jobs:
-  example-job:
-    docker:
-      # replace with your preferred image
-      - image: cimg/base:stable
-    steps:
-      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD      
-      - docker/build:
-          image: nodejs-sample-image 
-
 workflows:
-  example-workflow:
-    jobs:
-      - example-job
+    example-workflow:
+      jobs:
+        - docker/publish:
+            docker-username: DOCKER_LOGIN 
+            docker-password: DOCKER_PASSWORD 
+            image: nodejs-sample-app 
