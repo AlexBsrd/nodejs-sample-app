@@ -9,7 +9,6 @@ jobs:
     steps:
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD      
       - docker/build:
-          attach-at: /app 
           image: nodejs-sample-image 
 
 workflows:
