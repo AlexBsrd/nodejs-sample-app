@@ -18,3 +18,11 @@ jobs:
       - run: |
           docker build -t alexbsd/nodejs-sample-app .
           docker push alexbsd/nodejs-sample-app
+workflows:
+  version: 2
+  custom_workflow:
+    jobs:
+      - build
+      - publish:
+          requires:
+            - build
