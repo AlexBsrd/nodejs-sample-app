@@ -15,6 +15,7 @@ jobs:
     steps:
       - checkout
       - run: |
+          docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
           docker build -t alexbsd/nodejs-sample-app .
           docker push alexbsd/nodejs-sample-app
 workflows:
